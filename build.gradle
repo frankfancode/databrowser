@@ -32,7 +32,4 @@ ext {
 
     GROUP = 'com.frankfancode.databrowser'
     VERSION_NAME = "0.0.1"
-
-    POM_DEVELOPER_ID="FrankFanCode"
-    POM_DEVELOPER_NAME="FrankFan"
 }
