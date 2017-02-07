@@ -1,0 +1,37 @@
+apply plugin: 'com.android.application'
+
+dependencies {
+    compile 'com.android.support:appcompat-v7:25.1.0'
+    debugCompile project(':databrowser-sharepreference')
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.javaVersion
+        targetCompatibility rootProject.ext.javaVersion
+    }
+
+    defaultConfig {
+        applicationId "com.frankfancode.databrowser"
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.compileSdkVersion
+
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        debug
+    }
+
+    dexOptions {
+        dexInProcess false
+    }
+
+    lintOptions {
+        disable 'GoogleAppIndexingWarning'
+    }
+}

@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">SP Browser</string>
+    <string name="sp_list_label">Share Preference</string>
+</resources>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.frankfancode.databrowser.sharepreference">
+
+    <application>
+        <activity
+            android:name=".SPListActivity"
+            android:enabled="true"
+            android:icon="@drawable/sp_icon"
+            android:label="@string/sp_list_label"
+            android:taskAffinity="com.frankfancode.databrowser.sharepreference">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
