@@ -10,7 +10,7 @@ import android.support.v4.widget.SwipeRefreshLayout;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
-import android.view.ViewGroup;
+import android.view.animation.AnimationUtils;
 import android.widget.ExpandableListView;
 import android.widget.PopupWindow;
 import android.widget.TextView;
@@ -27,6 +27,7 @@ public class SPListActivity extends Activity implements ExpandableListView.OnChi
     private ExpandableListView mSpLV;
 
     private PopupWindow mPopupWindow;
+    View popupView;
     private TextView mDetailTv;
     private List<String> mSpNameList;
     private HashMap<String, List<String>> mKeyListMap = null;
@@ -103,20 +104,20 @@ public class SPListActivity extends Activity implements ExpandableListView.OnChi
         int w_screen = dm.widthPixels;
         int h_screen = dm.heightPixels;
 
-        View popupView = getLayoutInflater().inflate(R.layout.layout_popupwindow, null);
+        popupView = getLayoutInflater().inflate(R.layout.layout_popupwindow, null);
         mDetailTv = (TextView) popupView.findViewById(R.id.sp_detail_tv);
-        mPopupWindow = new PopupWindow(popupView, ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT, true);
+        mPopupWindow = new PopupWindow(popupView, (int) (w_screen * 0.9), (int) (h_screen * 0.8), true);
+
+        popupView.requestLayout();
         mPopupWindow.setTouchable(true);
         mPopupWindow.setOutsideTouchable(true);
         mPopupWindow.setBackgroundDrawable(new BitmapDrawable(getResources(), (Bitmap) null));
-        mPopupWindow.setWidth(w_screen - 100);
-        mPopupWindow.setHeight(h_screen - 500);
 
     }
 
     private void showPopup(String s) {
-
         mPopupWindow.showAtLocation(mSwipeLayout, Gravity.CENTER, 0, 0);
+        popupView.startAnimation(AnimationUtils.loadAnimation(this, R.anim.anm_in));
         if (s == null) {
             s = "";
         }
