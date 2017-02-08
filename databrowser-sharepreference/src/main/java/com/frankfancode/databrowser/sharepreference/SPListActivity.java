@@ -1,12 +1,12 @@
 package com.frankfancode.databrowser.sharepreference;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
-import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
@@ -22,7 +22,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
-public class SPListActivity extends AppCompatActivity implements ExpandableListView.OnChildClickListener {
+public class SPListActivity extends Activity implements ExpandableListView.OnChildClickListener {
     private SwipeRefreshLayout mSwipeLayout;
     private ExpandableListView mSpLV;
 

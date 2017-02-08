@@ -13,12 +13,12 @@ repositories {
 }
 
 dependencies {
-    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile fileTree(include: ['*.jar'], dir: 'libs')
     androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
-    compile 'com.android.support:appcompat-v7:25.1.0'
     testCompile 'junit:junit:4.12'
+    compile 'com.android.support:support-v4:23.0.1'
 }
 
 android {
@@ -127,7 +127,7 @@ bintray {
         userOrg = properties.getProperty("bintray.organizationId")
         repo = "maven"
         name = libName    //发布到JCenter上的项目名字，必须填写
-        desc = 'a local data browser '    //项目描述
+        desc = 'a local data browser ,such as sharepreference'    //项目描述
         websiteUrl = siteUrl
         vcsUrl = gitUrl
         licenses = ["Apache-2.0"]
