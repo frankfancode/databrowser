@@ -3,7 +3,6 @@
 <resources>
 
     <style name="AnimationFade" parent="android:Animation">
-        <!-- PopupWindow 左右弹出的效果-->
         <item name="android:windowEnterAnimation">@anim/anm_in</item>
         <item name="android:windowExitAnimation">@anim/anm_out</item>
     </style>
