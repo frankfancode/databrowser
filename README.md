@@ -40,6 +40,7 @@ debugCompile('com.frankfancode.databrowser:databrowser-sharepreference:0.0.5', {
 #### 效果图
 <br/>
 ![启动项](/screen/launcher.png)
+![例子](/screen/spsample.png)
 ![SharePreferences 列表](/screen/splist.png)
 ![SharePreferences 内容](/screen/spdetail.png)
 
