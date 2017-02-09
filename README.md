@@ -24,6 +24,7 @@
 - 不用 root 手机
 - 不用找目录
 - 不用频繁开关应用，数据更新之后，直接点击那一项就可以看到更新后的数据
+- 在应用列表里添加了启动项，跟普通应用一样
 - 排版相对优雅，按 key 分组
 - 线程安全
 - 使用 debugCompile 引入，不用担心发布上线。
@@ -38,9 +39,9 @@ debugCompile('com.frankfancode.databrowser:databrowser-sharepreference:0.0.5', {
 ```
 #### 效果图
 <br/>
-![SharePreferences List](/screen/launchaer.png)
-![SharePreferences List](/screen/splist.png)
-![SharePreferences Value](/screen/spdetail.png)
+![启动项](/screen/launcher.png)
+![SharePreferences 列表](/screen/splist.png)
+![SharePreferences 内容](/screen/spdetail.png)
 
 
 ## DataBrowser-Sqlite 
