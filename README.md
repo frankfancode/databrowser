@@ -27,7 +27,9 @@
 - 排版相对优雅，按 key 分组
 - 线程安全
 - 使用 debugCompile 引入，不用担心发布上线。
+
 #### 引入
+
 ```
 debugCompile('com.frankfancode.databrowser:databrowser-sharepreference:0.0.5', {
             exclude group: 'com.android.support'
