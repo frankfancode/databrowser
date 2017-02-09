@@ -1,11 +1,7 @@
-# databrowser
+# DataBrowser
 > 包括两部分，查看 SharePreferences 和 Sqlite（TODO）
 
-## DataBrowser-Sqlite 
-TODO
-
-
-##Data-SharePreferences
+## DataBrowser-SharePreferences
 使用 SharePreferences 做存储时，查看 是否正确的 保存、修改、清除 了数据有几种方式。
 ### 传统的方式
 #### 打印日志
@@ -29,14 +25,19 @@ TODO
 - 排版相对优雅，按 key 分组
 - 线程安全
 - 使用 debugCompile 引入，不用担心发布上线。
-
+#### 引入
 ```
 debugCompile('com.frankfancode.databrowser:databrowser-sharepreference:0.0.5', {
             exclude group: 'com.android.support'
                 })
 
 ```
-
+#### 效果图
 <br/>
 ![SharePreferences List](/screen/splist.png)
 ![SharePreferences Value](/screen/spdetail.png)
+
+
+## DataBrowser-Sqlite 
+TODO
+
