@@ -38,6 +38,7 @@ debugCompile('com.frankfancode.databrowser:databrowser-sharepreference:0.0.5', {
 ```
 #### 效果图
 <br/>
+![SharePreferences List](/screen/launchaer.png)
 ![SharePreferences List](/screen/splist.png)
 ![SharePreferences Value](/screen/spdetail.png)
 
