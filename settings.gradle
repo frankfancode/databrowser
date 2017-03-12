@@ -1,1 +1,1 @@
-include ':databrowser-sample', ':databrowser-sharepreference'
+include ':databrowser-sample', ':databrowser-sharepreference', ':databrowser-sqlite'

@@ -1,4 +1,4 @@
-package com.frankfancode.databrowser;
+package frankfancode.databrowser.sqlite;
 
 import org.junit.Test;
 

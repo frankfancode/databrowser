@@ -54,4 +54,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
+    public void createDatabase(View view) {
+
+        DatabaseHelper db = new DatabaseHelper(this.getApplicationContext());
+        db.addContact(new Contact("Ravi", "9100000000"));
+        db.addContact(new Contact("Srinivas", "9199999999"));
+        db.addContact(new Contact("Tommy", "9522222222"));
+        db.addContact(new Contact("Karthik", "9533333333"));
+
+    }
 }

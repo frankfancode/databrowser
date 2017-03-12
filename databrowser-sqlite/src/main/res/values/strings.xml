@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Sqlite Browser</string>
+    <string name="sqlite_browser">Sqlite Browser</string>
+</resources>

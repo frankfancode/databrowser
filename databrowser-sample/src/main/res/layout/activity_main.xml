@@ -17,17 +17,24 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="createSp"
-        android:text="create" />
+        android:text="create sharepreference" />
 
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="updateSp"
         android:text="update" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="clearSp"
         android:text="clear" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="createDatabase"
+        android:text="create database" />
 
 </LinearLayout>

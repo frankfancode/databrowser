@@ -1,4 +1,4 @@
-package com.frankfancode.databrowser;
+package frankfancode.databrowser.sqlite;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.frankfancode.databrowser", appContext.getPackageName());
+        assertEquals("frankfancode.databrowser.sqlite.test", appContext.getPackageName());
     }
 }

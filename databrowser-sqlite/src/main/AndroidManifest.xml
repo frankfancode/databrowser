@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="frankfancode.databrowser.sqlite">
+
+    <application>
+        <activity
+            android:name=".ui.DbListActivity"
+            android:label="@string/sqlite_browser"
+            android:launchMode="singleTop"
+            android:taskAffinity="com.frankfancode.databrowser.sqlite">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ui.TableListActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".ui.TableDataActivity"
+            android:launchMode="singleTop"></activity>
+    </application>
+
+</manifest>
