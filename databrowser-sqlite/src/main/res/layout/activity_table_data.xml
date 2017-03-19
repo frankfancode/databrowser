@@ -6,11 +6,14 @@
     android:layout_height="match_parent"
     tools:context="frankfancode.databrowser.sqlite.ui.TableDataActivity">
 
-    <HorizontalScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <ListView
+    <!--<HorizontalScrollView-->
+        <!--android:id="@+id/hsv"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="match_parent">-->
+
+        <frankfancode.databrowser.sqlite.SGridView
+            android:id="@+id/gv_table"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
-    </HorizontalScrollView>
+    <!--</HorizontalScrollView>-->
 </RelativeLayout>

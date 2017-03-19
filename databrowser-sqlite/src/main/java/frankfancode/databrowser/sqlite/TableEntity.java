@@ -14,4 +14,10 @@ public class TableEntity implements Serializable {
         return (titles == null) ? 0 : titles.length;
     }
 
+    public int getTotalGridCount() {
+        int columnCount = getColumnCount();
+        int rowCount=tableData.length+1;
+        return columnCount*rowCount;
+    }
+
 }

@@ -10,10 +10,8 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.Map;
 
 /**
  * Created by frank on 17-3-11.
@@ -58,26 +56,18 @@ public class DBManager {
         return null;
     }
 
-    public Map getTable(String databaseName, String tableName) {
+    public TableEntity getTable(String databaseName, String tableName) {
 
-        HashMap<String, String> tableDataMap = null;
         TableEntity tableEntity = new TableEntity();
         //创建数据库
         SQLiteDatabase db = context.openOrCreateDatabase(databaseName, Context.MODE_PRIVATE, null);
         Cursor cursor = db.rawQuery("select * from " + tableName, null);
         if (cursor != null) {
-            tableDataMap = new HashMap<>();
-
             cursor.moveToFirst();
-
-            String columnNames = Arrays.toString(cursor.getColumnNames());
             tableEntity.titles = cursor.getColumnNames();
             tableEntity.tableData = getTableData(cursor, 10);
-
-            tableDataMap.put("columnnames", columnNames);
-            tableDataMap.put("data", cursorToString(cursor));
         }
-        return tableDataMap;
+        return tableEntity;
     }
 
     private String[][] getTableData(Cursor cursor, int rowLimit) {
