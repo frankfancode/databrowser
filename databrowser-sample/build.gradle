@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 dependencies {
-    compile 'com.android.support:appcompat-v7:23.0.1'
+    compile rootProject.ext.supportDependencies.appCompat
     debugCompile project(':databrowser-sharepreference')
     debugCompile project(':databrowser-sqlite')
 }

@@ -10,7 +10,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:2.2.2'
+        classpath 'com.android.tools.build:gradle:2.3.0'
         classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.7.3'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.5'
     }
@@ -27,9 +27,22 @@ ext {
     minSdkVersion = 11
     compileSdkVersion = 23
     targetSdkVersion = compileSdkVersion
-    buildToolsVersion = '23.0.2'
+    buildToolsVersion = '25.0.0'
     javaVersion = JavaVersion.VERSION_1_7
+    supportLibrary = '23.4.0'
+    //Support Libraries dependencies
+    supportDependencies = [
+            design           :         "com.android.support:design:${supportLibrary}",
+            recyclerView     :         "com.android.support:recyclerview-v7:${supportLibrary}",
+            cardView         :         "com.android.support:cardview-v7:${supportLibrary}",
+            appCompat        :         "com.android.support:appcompat-v7:${supportLibrary}",
+            supportAnnotation:         "com.android.support:support-annotations:${supportLibrary}",
+            supportv4        :         "com.android.support:support-v4:${supportLibrary}"
+    ]
 
     GROUP = 'com.frankfancode.databrowser'
     VERSION_NAME = "0.0.5"
+
+
+
 }

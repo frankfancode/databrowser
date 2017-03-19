@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DataBrowser.iml" filepath="$PROJECT_DIR$/DataBrowser.iml" />
       <module fileurl="file://$PROJECT_DIR$/databrowser.iml" filepath="$PROJECT_DIR$/databrowser.iml" />
       <module fileurl="file://$PROJECT_DIR$/databrowser-sample/databrowser-sample.iml" filepath="$PROJECT_DIR$/databrowser-sample/databrowser-sample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/databrowser-sample/databrowser-sample.iml" filepath="$PROJECT_DIR$/databrowser-sample/databrowser-sample.iml" />
       <module fileurl="file://$PROJECT_DIR$/databrowser-sharepreference/databrowser-sharepreference.iml" filepath="$PROJECT_DIR$/databrowser-sharepreference/databrowser-sharepreference.iml" />
+      <module fileurl="file://$PROJECT_DIR$/databrowser-sharepreference/databrowser-sharepreference.iml" filepath="$PROJECT_DIR$/databrowser-sharepreference/databrowser-sharepreference.iml" />
+      <module fileurl="file://$PROJECT_DIR$/databrowser-sqlite/databrowser-sqlite.iml" filepath="$PROJECT_DIR$/databrowser-sqlite/databrowser-sqlite.iml" />
       <module fileurl="file://$PROJECT_DIR$/databrowser-sqlite/databrowser-sqlite.iml" filepath="$PROJECT_DIR$/databrowser-sqlite/databrowser-sqlite.iml" />
     </modules>
   </component>
