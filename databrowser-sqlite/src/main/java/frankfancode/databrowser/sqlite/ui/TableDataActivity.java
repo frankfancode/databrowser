@@ -17,6 +17,6 @@ public class TableDataActivity extends AppCompatActivity {
         setContentView(R.layout.activity_table_data);
         mDbName = getIntent().getStringExtra(Constant.INTENT_DATABASE_NAME);
         mTableName = getIntent().getStringExtra(Constant.INTENT_TABLE_NAME);
-        DBManager.getInstance().getTableData(mDbName, mTableName);
+        DBManager.getInstance().getTable(mDbName, mTableName);
     }
 }

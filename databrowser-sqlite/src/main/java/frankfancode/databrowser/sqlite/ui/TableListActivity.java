@@ -27,7 +27,7 @@ public class TableListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_table_list);
 
         mLvTable = (ListView) findViewById(R.id.lv_table);
-        mDatabaseName = getIntent().getStringExtra("databaseName");
+        mDatabaseName = getIntent().getStringExtra(Constant.INTENT_DATABASE_NAME);
         mTableList = DBManager.getInstance().getTableList(mDatabaseName);
         mAdapter=new TableAdapter();
         mAdapter.setData(mTableList);

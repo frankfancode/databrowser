@@ -35,6 +35,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="createDatabase"
-        android:text="create database" />
+        android:text="insert database" />
 
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="clearDatabase"
+        android:text="clear database" />
 </LinearLayout>

@@ -63,4 +63,9 @@ public class MainActivity extends AppCompatActivity {
         db.addContact(new Contact("Karthik", "9533333333"));
 
     }
+
+    public void clearDatabase(View view) {
+        DatabaseHelper db = new DatabaseHelper(this.getApplicationContext());
+        db.clearContact();
+    }
 }

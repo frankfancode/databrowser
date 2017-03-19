@@ -3,7 +3,6 @@ package frankfancode.databrowser.sqlite;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.os.RemoteException;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -12,6 +11,7 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
@@ -58,23 +58,69 @@ public class DBManager {
         return null;
     }
 
-    public Map getTableData(String databaseName, String tableName) {
+    public Map getTable(String databaseName, String tableName) {
 
         HashMap<String, String> tableDataMap = null;
+        TableEntity tableEntity = new TableEntity();
         //创建数据库
         SQLiteDatabase db = context.openOrCreateDatabase(databaseName, Context.MODE_PRIVATE, null);
-        Cursor cursor = db.rawQuery("select * from " + tableName + "  order by _id", null);
+        Cursor cursor = db.rawQuery("select * from " + tableName, null);
         if (cursor != null) {
             tableDataMap = new HashMap<>();
 
             cursor.moveToFirst();
 
             String columnNames = Arrays.toString(cursor.getColumnNames());
+            tableEntity.titles = cursor.getColumnNames();
+            tableEntity.tableData = getTableData(cursor, 10);
 
             tableDataMap.put("columnnames", columnNames);
             tableDataMap.put("data", cursorToString(cursor));
         }
         return tableDataMap;
+    }
+
+    private String[][] getTableData(Cursor cursor, int rowLimit) {
+
+        List<String[]> rowlist = new LinkedList<>();
+        for (int i = 0; i < rowLimit && !cursor.isAfterLast(); i++) {
+            rowlist.add(getRow(cursor));
+            if (!cursor.moveToNext())
+                break;
+        }
+        int rowsCount = rowlist.size();
+        String[][] tableData = new String[rowsCount][];
+        tableData = rowlist.toArray(tableData);
+        return tableData;
+    }
+
+
+    private String[] getRow(Cursor cursor) {
+        int nColumns = cursor.getColumnCount();
+        String[] row = new String[nColumns];
+        for (int i = 0; i < nColumns; i++) {
+            String colName = cursor.getColumnName(i);
+            if (colName != null) {
+                switch (cursor.getType(i)) {
+                    case Cursor.FIELD_TYPE_BLOB:
+                        row[i] = cursor.getBlob(i).toString();
+                        break;
+                    case Cursor.FIELD_TYPE_FLOAT:
+                        row[i] = String.valueOf(cursor.getDouble(i));
+                        break;
+                    case Cursor.FIELD_TYPE_INTEGER:
+                        row[i] = String.valueOf(cursor.getLong(i));
+                        break;
+                    case Cursor.FIELD_TYPE_NULL:
+                        row[i] = null;
+                        break;
+                    case Cursor.FIELD_TYPE_STRING:
+                        row[i] = cursor.getString(i);
+                        break;
+                }
+            }
+        }
+        return row;
     }
 
     private String cursorToString(Cursor crs) {
