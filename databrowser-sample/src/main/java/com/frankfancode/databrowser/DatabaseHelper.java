@@ -22,7 +22,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     // Contacts table name
     private static final String TABLE_CONTACTS = "contacts";
-    private static final String TABLE_CALL= "call";
+    private static final String TABLE_CALL = "call";
 
     // Contacts Table Columns names
     private static final String KEY_ID = "id";
@@ -44,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         String CREATE_CALL_TABLE = "CREATE TABLE " + TABLE_CALL + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
                 + KEY_PH_NO + " TEXT" + ")";
-        db.execSQL(CREATE_CALL_TABLE );
+        db.execSQL(CREATE_CALL_TABLE);
     }
 
     // Upgrading database
@@ -52,6 +52,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // Drop older table if existed
         db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
+        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CALL);
 
         // Create tables again
         onCreate(db);
@@ -74,13 +75,21 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         db.close(); // Closing database connection
     }
 
+
+    void clearContact() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_CONTACTS,null,null);
+        db.close();
+    }
+
+
     // Getting single contact
     Contact getContact(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursor = db.query(TABLE_CONTACTS, new String[] { KEY_ID,
-                        KEY_NAME, KEY_PH_NO }, KEY_ID + "=?",
-                new String[] { String.valueOf(id) }, null, null, null, null);
+        Cursor cursor = db.query(TABLE_CONTACTS, new String[]{KEY_ID,
+                        KEY_NAME, KEY_PH_NO}, KEY_ID + "=?",
+                new String[]{String.valueOf(id)}, null, null, null, null);
         if (cursor != null)
             cursor.moveToFirst();
 
@@ -125,14 +134,14 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         // updating row
         return db.update(TABLE_CONTACTS, values, KEY_ID + " = ?",
-                new String[] { String.valueOf(contact.getID()) });
+                new String[]{String.valueOf(contact.getID())});
     }
 
     // Deleting single contact
     public void deleteContact(Contact contact) {
         SQLiteDatabase db = this.getWritableDatabase();
         db.delete(TABLE_CONTACTS, KEY_ID + " = ?",
-                new String[] { String.valueOf(contact.getID()) });
+                new String[]{String.valueOf(contact.getID())});
         db.close();
     }
 
