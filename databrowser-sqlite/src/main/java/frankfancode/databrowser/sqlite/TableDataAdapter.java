@@ -7,9 +7,7 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
-/**
- * Created by fxd on 19/03/2017.
- */
+
 
 public class TableDataAdapter extends BaseAdapter {
     private TableEntity tableEntity;

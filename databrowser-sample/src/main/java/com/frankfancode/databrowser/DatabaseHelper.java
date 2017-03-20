@@ -28,6 +28,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
     private static final String KEY_PH_NO = "phone_number";
+    private static final String KEY_SALARY= "salary";
+    private static final String KEY_GENDER = "gender";
 
     public DatabaseHelper(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -38,7 +40,10 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     public void onCreate(SQLiteDatabase db) {
         String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_CONTACTS + "("
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
-                + KEY_PH_NO + " TEXT" + ")";
+                + KEY_PH_NO + " TEXT,"
+                + KEY_SALARY + " TEXT,"
+                + KEY_GENDER + " TEXT"
+                + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
 
         String CREATE_CALL_TABLE = "CREATE TABLE " + TABLE_CALL + "("
