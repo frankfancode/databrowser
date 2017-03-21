@@ -10,23 +10,73 @@ public class Contact {
     int _id;
     String _name;
     String _phone_number;
+    String _salary;
+    String _bonus;
+    String _home;
+    String _age;
+    String _hight;
+    String _weight;
+    String _gender;
+
+    public int getid() {
+        return _id;
+    }
+
+    public String getname() {
+        return _name;
+    }
+    
+
+    public String getphone_number() {
+        return _phone_number;
+    }
+
+    public String getsalary() {
+        return _salary;
+    }
+
+    public String getbonus() {
+        return _bonus;
+    }
+
+    public String gethome() {
+        return _home;
+    }
+
+    public String getage() {
+        return _age;
+    }
+
+    public String gethight() {
+        return _hight;
+    }
+
+    public String getweight() {
+        return _weight;
+    }
+
+    public String getgender() {
+        return _gender;
+    }
 
     // Empty constructor
     public Contact(){
 
     }
-    // constructor
-    public Contact(int id, String name, String _phone_number){
-        this._id = id;
-        this._name = name;
+
+    public Contact( String _name, String _phone_number, String _salary, String _bonus, String _home, String _age, String _hight, String _weight, String _gender) {
+
+        this._name = _name;
         this._phone_number = _phone_number;
+        this._salary = _salary;
+        this._bonus = _bonus;
+        this._home = _home;
+        this._age = _age;
+        this._hight = _hight;
+        this._weight = _weight;
+        this._gender = _gender;
     }
 
-    // constructor
-    public Contact(String name, String _phone_number){
-        this._name = name;
-        this._phone_number = _phone_number;
-    }
     // getting ID
     public int getID(){
         return this._id;

@@ -28,7 +28,12 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     private static final String KEY_ID = "id";
     private static final String KEY_NAME = "name";
     private static final String KEY_PH_NO = "phone_number";
-    private static final String KEY_SALARY= "salary";
+    private static final String KEY_SALARY = "salary";
+    private static final String KEY_BONUS = "bonus";
+    private static final String KEY_HOME = "home";
+    private static final String KEY_AGE = "age";
+    private static final String KEY_HIGHT = "hight";
+    private static final String KEY_WEIGHT = "weight";
     private static final String KEY_GENDER = "gender";
 
     public DatabaseHelper(Context context) {
@@ -42,6 +47,11 @@ public class DatabaseHelper extends SQLiteOpenHelper {
                 + KEY_ID + " INTEGER PRIMARY KEY," + KEY_NAME + " TEXT,"
                 + KEY_PH_NO + " TEXT,"
                 + KEY_SALARY + " TEXT,"
+                + KEY_BONUS + " TEXT,"
+                + KEY_HOME + " TEXT,"
+                + KEY_AGE + " TEXT,"
+                + KEY_HIGHT + " TEXT,"
+                + KEY_WEIGHT + " TEXT,"
                 + KEY_GENDER + " TEXT"
                 + ")";
         db.execSQL(CREATE_CONTACTS_TABLE);
@@ -74,16 +84,25 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_NAME, contact.getName()); // Contact Name
         values.put(KEY_PH_NO, contact.getPhoneNumber()); // Contact Phone
+        values.put(KEY_SALARY, contact.getsalary()); // Contact Phone
+        values.put(KEY_BONUS, contact.getbonus()); // Contact Phone
+        values.put(KEY_HOME, contact.gethome()); // Contact Phone
+        values.put(KEY_AGE, contact.getage()); // Contact Phone
+        values.put(KEY_HIGHT, contact.gethight()); // Contact Phone
+        values.put(KEY_WEIGHT, contact.getweight()); // Contact Phone
+        values.put(KEY_GENDER, contact.getgender()); // Contact Phone
 
         // Inserting Row
-        db.insert(TABLE_CONTACTS, null, values);
+        // Inserting Row
+       long a= db.insert(TABLE_CONTACTS, null, values);
         db.close(); // Closing database connection
     }
 
 
     void clearContact() {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_CONTACTS,null,null);
+//        db.execSQL("DROP TABLE IF EXISTS " + TABLE_CONTACTS);
+        db.delete(TABLE_CONTACTS, null, null);
         db.close();
     }
 
@@ -98,8 +117,16 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         if (cursor != null)
             cursor.moveToFirst();
 
-        Contact contact = new Contact(Integer.parseInt(cursor.getString(0)),
-                cursor.getString(1), cursor.getString(2));
+        Contact contact = new Contact(cursor.getString(0),
+                cursor.getString(1),
+                cursor.getString(2),
+                cursor.getString(3),
+                cursor.getString(4),
+                cursor.getString(5),
+                cursor.getString(6),
+                cursor.getString(7),
+                cursor.getString(8)
+        );
         // return contact
         return contact;
     }

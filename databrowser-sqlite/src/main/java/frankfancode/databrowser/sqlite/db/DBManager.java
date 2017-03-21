@@ -1,4 +1,4 @@
-package frankfancode.databrowser.sqlite;
+package frankfancode.databrowser.sqlite.db;
 
 import android.content.Context;
 import android.database.Cursor;
@@ -12,6 +12,8 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
+
+import frankfancode.databrowser.sqlite.entity.TableEntity;
 
 /**
  * Created by frank on 17-3-11.
@@ -56,7 +58,7 @@ public class DBManager {
         return null;
     }
 
-    public TableEntity getTable(String databaseName, String tableName) {
+    public TableEntity getTable(String databaseName, String tableName, long limit) {
 
         TableEntity tableEntity = new TableEntity();
         //创建数据库
@@ -65,12 +67,12 @@ public class DBManager {
         if (cursor != null) {
             cursor.moveToFirst();
             tableEntity.titles = cursor.getColumnNames();
-            tableEntity.tableData = getTableData(cursor, 10);
+            tableEntity.tableData = getTableData(cursor,limit);
         }
         return tableEntity;
     }
 
-    private String[][] getTableData(Cursor cursor, int rowLimit) {
+    private String[][] getTableData(Cursor cursor, long rowLimit) {
 
         List<String[]> rowlist = new LinkedList<>();
         for (int i = 0; i < rowLimit && !cursor.isAfterLast(); i++) {

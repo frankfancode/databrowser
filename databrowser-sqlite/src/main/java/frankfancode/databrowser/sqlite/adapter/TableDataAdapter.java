@@ -1,4 +1,4 @@
-package frankfancode.databrowser.sqlite;
+package frankfancode.databrowser.sqlite.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,8 @@ import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
+import frankfancode.databrowser.sqlite.R;
+import frankfancode.databrowser.sqlite.entity.TableEntity;
 
 
 public class TableDataAdapter extends BaseAdapter {

@@ -8,11 +8,11 @@ import android.widget.GridView;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
 
-import frankfancode.databrowser.sqlite.Constant;
-import frankfancode.databrowser.sqlite.DBManager;
+import frankfancode.databrowser.sqlite.constants.Constant;
+import frankfancode.databrowser.sqlite.db.DBManager;
 import frankfancode.databrowser.sqlite.R;
-import frankfancode.databrowser.sqlite.TableDataAdapter;
-import frankfancode.databrowser.sqlite.TableEntity;
+import frankfancode.databrowser.sqlite.adapter.TableDataAdapter;
+import frankfancode.databrowser.sqlite.entity.TableEntity;
 
 public class TableDataActivity extends AppCompatActivity {
     private String mDbName;
@@ -36,7 +36,7 @@ public class TableDataActivity extends AppCompatActivity {
     }
 
     private void getData() {
-        mTableEntity = DBManager.getInstance().getTable(mDbName, mTableName);
+        mTableEntity = DBManager.getInstance().getTable(mDbName, mTableName,Long.MAX_VALUE);
         mAdapter = new TableDataAdapter();
         mAdapter.setData(mTableEntity);
         mGvTable.setNumColumns(mTableEntity.getColumnCount());

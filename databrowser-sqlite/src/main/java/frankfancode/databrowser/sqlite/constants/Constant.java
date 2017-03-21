@@ -1,4 +1,4 @@
-package frankfancode.databrowser.sqlite;
+package frankfancode.databrowser.sqlite.constants;
 
 /**
  * Created by frank on 17-3-12.

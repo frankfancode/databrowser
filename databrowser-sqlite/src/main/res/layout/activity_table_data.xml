@@ -13,6 +13,12 @@
         <GridView
             android:id="@+id/table_gv"
             android:layout_width="match_parent"
+            android:background="#eeeeee"
+            android:listSelector="@android:color/transparent"
+            android:horizontalSpacing="1dip"
+            android:verticalSpacing="1dip"
+            android:paddingLeft="1dip"
+            android:paddingTop="1dip"
             android:layout_height="match_parent" />
     </LinearLayout>
 </HorizontalScrollView>

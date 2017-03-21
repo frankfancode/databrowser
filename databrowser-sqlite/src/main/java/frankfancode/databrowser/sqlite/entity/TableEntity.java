@@ -1,4 +1,4 @@
-package frankfancode.databrowser.sqlite;
+package frankfancode.databrowser.sqlite.entity;
 
 import java.io.Serializable;
 

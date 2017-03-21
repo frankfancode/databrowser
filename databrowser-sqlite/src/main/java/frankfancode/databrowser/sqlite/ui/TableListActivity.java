@@ -9,10 +9,10 @@ import android.widget.ListView;
 
 import java.util.List;
 
-import frankfancode.databrowser.sqlite.Constant;
-import frankfancode.databrowser.sqlite.DBManager;
+import frankfancode.databrowser.sqlite.constants.Constant;
+import frankfancode.databrowser.sqlite.db.DBManager;
 import frankfancode.databrowser.sqlite.R;
-import frankfancode.databrowser.sqlite.TableAdapter;
+import frankfancode.databrowser.sqlite.adapter.TableAdapter;
 
 public class TableListActivity extends AppCompatActivity {
 

@@ -1,4 +1,4 @@
-package frankfancode.databrowser.sqlite;
+package frankfancode.databrowser.sqlite.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -9,14 +9,16 @@ import android.widget.TextView;
 
 import java.util.List;
 
+import frankfancode.databrowser.sqlite.R;
+
 /**
  * Created by frank on 17-3-11.
  */
 
-public class DBAdapter extends BaseAdapter {
+public class TableAdapter extends BaseAdapter {
     private List<String> dbs;
 
-    public void setDbs(List<String> dbs) {
+    public void setData(List<String> dbs) {
         this.dbs = dbs;
     }
 
