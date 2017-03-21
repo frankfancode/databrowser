@@ -46,5 +46,6 @@ debugCompile('com.frankfancode.databrowser:databrowser-sharepreference:0.0.5', {
 
 
 ## DataBrowser-Sqlite 
+![表格数据](/screen/databrowser_sqlite.jpg)
 TODO
 
